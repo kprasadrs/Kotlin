@@ -18,7 +18,7 @@ class AccountVerificationActivity : AppCompatActivity() {
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
 
         btnContinue.setOnClickListener {  v: View? ->
-            var intent = Intent(this,ChooseAccountTypeActivity::class.java)
+            var intent = Intent(this,DisplayUserLocationActivity::class.java)
             startActivity(intent)
         }
 

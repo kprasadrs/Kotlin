@@ -9,16 +9,17 @@ import android.widget.Toast
 import com.google.gson.Gson
 import com.p4p.android.model.RegisterModel
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.mytoolbar.*
 
 /**
  * Created by Krishnaprasad.RS on 12-06-2018.
  */
 class RegisterActivity : AppCompatActivity() {
-    var name: String ="" ;
-    var email: String="";
+    var name: String = "";
+    var email: String = "";
 
-    var password: String="";
-    var confirmpassword: String="";
+    var password: String = "";
+    var confirmpassword: String = "";
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -26,6 +27,8 @@ class RegisterActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         getSupportActionBar()?.setTitle(null);
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        txtToolBarHeading.setText("Register Screen")
+
         btnRegisterSubmit.setOnClickListener { v: View? ->
 
             System.out.println("inside button click");
@@ -40,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "data" + json.toString(), Toast.LENGTH_LONG).show();
 
-                var intent = Intent(this,AccountVerificationActivity::class.java)
+                var intent = Intent(this, AccountVerificationActivity::class.java)
                 startActivity(intent)
 
             } else {
@@ -66,7 +69,7 @@ class RegisterActivity : AppCompatActivity() {
 
         var lPwd = edtPassword.text.toString()
         password = lPwd
-        var lConfirmPwd = edtConfirmPassword.text.toString()
+        var lConfirmPwd = edtConfirmPwd.text.toString()
         confirmpassword = lConfirmPwd
 
         if (lName.trim().length == 0) {
